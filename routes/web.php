@@ -13,11 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/', ['App\Http\Controllers\GolonganController', 'index'])->name('golongan.index');
+Route::get('/golongan', ['App\Http\Controllers\GolonganController', 'index'])->name('golongan.index');
 Route::get('/golongan/create', ['App\Http\Controllers\GolonganController', 'create'])->name('golongan.create');
 Route::post('/golongan', ['App\Http\Controllers\GolonganController', 'store'])->name('golongan.store');
 Route::get('/golongan/{id}/edit', ['App\Http\Controllers\GolonganController', 'edit'])->name('golongan.edit');
