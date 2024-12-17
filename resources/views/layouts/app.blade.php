@@ -3,21 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Aplikasi PLN Siantar')</title>
+    <title>@yield('title', 'Aplikasi PLN Tuntungan')</title>
     <!-- Tambahkan link ke file CSS atau framework seperti Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Warna Hijau untuk Navbar dan Footer */
-        .bg-green {
-            background-color: #28a745 !important; /* Warna hijau Bootstrap */
+        /* Warna Navbar */
+        .bg-custom {
+            background-color: #007bff !important; /* Ganti dengan warna yang diinginkan */
+        }
+
+        /* Memastikan Navbar tetap di atas dan tidak tertutup konten */
+        body {
+            padding-top: 70px; /* Memberikan ruang untuk navbar yang fixed */
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000; /* Agar navbar tetap di atas */
+        }
+
+        /* Warna Footer */
+        footer {
+            position: relative;
+            z-index: 0; /* Memastikan footer tidak terhalang navbar */
         }
     </style>
 </head>
 <body>
     <!-- Header / Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-green">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">PLN Siantar</a>
+            <a class="navbar-brand" href="#">PLN Tuntungan</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -43,8 +62,8 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-green text-white text-center py-3 mt-4">
-        <p>&copy; {{ date('Y') }} PLN Siantar. All Rights Reserved.</p>
+    <footer class="bg-custom text-white text-center py-3 mt-4">
+        <p>&copy; {{ date('Y') }} PLN Tuntungan. All Rights Reserved.</p>
     </footer>
 
     <!-- Tambahkan script seperti Bootstrap JS -->
